@@ -1,0 +1,683 @@
+---
+title: Math Functions in Python
+description: "A beginner-friendly guide to Python math functions, including built-in functions like abs(), round(), min(), max(), sum(), pow(), and important tools from the math module."
+---
+
+# Math Functions in Python
+
+After learning about numbers, integers, floats, and arithmetic operators, the next step is learning how to use **math functions**.
+
+Operators like `+`, `-`, `*`, and `/` are useful for direct calculations.
+But many common math tasks are easier and clearer with functions.
+
+This lesson introduces two important groups:
+
+* **built-in math-related functions**
+* functions from Python’s **`math` module**
+
+Together, these give you a strong foundation for working with numbers in real Python programs.
+
+---
+
+## What is a function?
+
+A **function** is a reusable piece of code that performs a task.
+
+You have already seen functions such as:
+
+* `print()`
+* `type()`
+
+Math functions work the same way:
+
+* they receive input
+* they perform an operation
+* they return a result
+
+Example:
+
+```python
+print(abs(-7))
+```
+
+Here:
+
+* `abs()` receives `-7`
+* it calculates the absolute value
+* it returns `7`
+* `print()` shows the result
+
+---
+
+## Built-in math-related functions
+
+Python includes some useful math-related functions without needing to import anything.
+
+These are great for beginners because you can use them immediately.
+
+Some of the most important ones are:
+
+* `abs()`
+* `round()`
+* `pow()`
+* `min()`
+* `max()`
+* `sum()`
+
+Let’s go through them carefully.
+
+---
+
+## `abs()`
+
+`abs()` means **absolute value**.
+
+The absolute value of a number is its distance from zero, ignoring the sign.
+
+Examples:
+
+```python
+print(abs(-5))
+print(abs(5))
+print(abs(-3.2))
+```
+
+Output:
+
+```txt
+5
+5
+3.2
+```
+
+This is useful when:
+
+* you only care about magnitude
+* negative and positive signs should be ignored
+* you want the distance between values
+
+---
+
+## `round()`
+
+`round()` rounds a number to the nearest whole number by default.
+
+Examples:
+
+```python
+print(round(4.3))
+print(round(4.7))
+print(round(9.99))
+```
+
+Output:
+
+```txt
+4
+5
+10
+```
+
+You can also tell `round()` how many decimal places you want.
+
+Example:
+
+```python
+print(round(3.14159, 2))
+print(round(9.87654, 3))
+```
+
+Output:
+
+```txt
+3.14
+9.877
+```
+
+This is especially useful when:
+
+* showing prices
+* formatting measurements
+* making decimal output easier to read
+
+### Important beginner note
+
+`round()` helps display cleaner values, but it does not remove the deeper idea of floating-point precision.
+
+So if a value is slightly off because of floating-point representation, rounding may make it look cleaner, but the internal value still comes from floating-point math.
+
+---
+
+## `pow()`
+
+`pow()` raises one number to the power of another.
+
+Example:
+
+```python
+print(pow(2, 3))
+print(pow(5, 2))
+```
+
+Output:
+
+```txt
+8
+25
+```
+
+This means:
+
+* `pow(2, 3)` means `2 × 2 × 2`
+* `pow(5, 2)` means `5 × 5`
+
+You may remember that Python also has the `**` operator:
+
+```python
+print(2 ** 3)
+```
+
+This gives the same result:
+
+```txt
+8
+```
+
+So both are valid:
+
+* `pow(2, 3)`
+* `2 ** 3`
+
+For beginners, `**` is often easier to read, but `pow()` is still important to know.
+
+---
+
+## `min()`
+
+`min()` returns the smallest value.
+
+Examples:
+
+```python
+print(min(3, 7, 1, 9))
+print(min(-4, 2, 8))
+```
+
+Output:
+
+```txt
+1
+-4
+```
+
+You can also use it with collections like lists.
+
+Example:
+
+```python
+numbers = [10, 4, 25, 7]
+print(min(numbers))
+```
+
+Output:
+
+```txt
+4
+```
+
+---
+
+## `max()`
+
+`max()` returns the largest value.
+
+Examples:
+
+```python
+print(max(3, 7, 1, 9))
+print(max(-4, 2, 8))
+```
+
+Output:
+
+```txt
+9
+8
+```
+
+With a list:
+
+```python
+numbers = [10, 4, 25, 7]
+print(max(numbers))
+```
+
+Output:
+
+```txt
+25
+```
+
+This is very useful in beginner problems and algorithms.
+
+---
+
+## `sum()`
+
+`sum()` adds all the values in a collection.
+
+Example:
+
+```python
+numbers = [1, 2, 3, 4, 5]
+print(sum(numbers))
+```
+
+Output:
+
+```txt
+15
+```
+
+This is much simpler than manually writing:
+
+```python
+1 + 2 + 3 + 4 + 5
+```
+
+`sum()` is especially useful when:
+
+* adding scores
+* calculating totals
+* working with lists of numbers
+
+---
+
+## When built-in functions are enough
+
+For many beginner programs, built-in functions are already enough.
+
+You can do a lot with:
+
+* `abs()`
+* `round()`
+* `pow()`
+* `min()`
+* `max()`
+* `sum()`
+
+But Python also gives access to more advanced math tools through a module called `math`.
+
+---
+
+## The `math` module
+
+The `math` module is a built-in Python module that provides many useful mathematical functions and constants.
+
+Before you use it, you need to import it:
+
+```python
+import math
+```
+
+After that, you can access functions inside the module with dot notation.
+
+Example:
+
+```python
+import math
+
+print(math.sqrt(25))
+```
+
+Output:
+
+```txt
+5.0
+```
+
+Here:
+
+* `math` is the module
+* `sqrt()` is a function inside the module
+
+---
+
+## `math.sqrt()`
+
+`math.sqrt()` returns the square root of a number.
+
+Example:
+
+```python
+import math
+
+print(math.sqrt(16))
+print(math.sqrt(81))
+```
+
+Output:
+
+```txt
+4.0
+9.0
+```
+
+This is useful in:
+
+* geometry
+* distance calculations
+* formulas
+* general numeric programming
+
+### Why is the result a float?
+
+Even if the answer looks like a whole number, `math.sqrt()` returns a float.
+
+Example:
+
+```python
+import math
+
+result = math.sqrt(25)
+print(result)
+print(type(result))
+```
+
+Output:
+
+```txt
+5.0
+<class 'float'>
+```
+
+This is normal behavior.
+
+---
+
+## `math.ceil()`
+
+`math.ceil()` rounds a number **up** to the nearest integer.
+
+Example:
+
+```python
+import math
+
+print(math.ceil(4.1))
+print(math.ceil(4.9))
+```
+
+Output:
+
+```txt
+5
+5
+```
+
+This is useful when:
+
+* you must round upward
+* partial values must count as a full next unit
+
+Example idea:
+
+> If 10.2 boxes are needed, you really need 11 boxes.
+
+---
+
+## `math.floor()`
+
+`math.floor()` rounds a number **down** to the nearest integer.
+
+Example:
+
+```python
+import math
+
+print(math.floor(4.1))
+print(math.floor(4.9))
+```
+
+Output:
+
+```txt
+4
+4
+```
+
+This is useful when you want to discard the decimal part by moving downward.
+
+---
+
+## `math.pi`
+
+The `math` module also provides useful constants.
+
+One of the most famous is `math.pi`.
+
+Example:
+
+```python
+import math
+
+print(math.pi)
+```
+
+Output:
+
+```txt
+3.141592653589793
+```
+
+This is useful in:
+
+* circles
+* geometry
+* formulas involving angles or radius
+
+Example:
+
+```python
+import math
+
+radius = 3
+area = math.pi * radius ** 2
+print(area)
+```
+
+---
+
+## `math.factorial()`
+
+`math.factorial()` returns the factorial of a positive integer.
+
+Example:
+
+```python
+import math
+
+print(math.factorial(5))
+```
+
+Output:
+
+```txt
+120
+```
+
+This means:
+
+```txt
+5 × 4 × 3 × 2 × 1
+```
+
+Factorials appear in:
+
+* combinatorics
+* probability
+* some math problems
+
+Beginners do not need to use factorial often at first, but it is a good example of a specialized math function.
+
+---
+
+## Built-in functions vs `math` module functions
+
+This is an important distinction.
+
+### Built-in functions
+
+These work immediately:
+
+```python
+print(abs(-8))
+print(round(3.6))
+print(max(2, 9, 4))
+```
+
+You do **not** need to import anything.
+
+### `math` module functions
+
+These require:
+
+```python
+import math
+```
+
+Then you use them like:
+
+```python
+print(math.sqrt(36))
+print(math.ceil(2.1))
+print(math.floor(2.9))
+```
+
+So the rule is:
+
+* built-in functions are available immediately
+* `math` functions must be imported from the `math` module
+
+---
+
+## A clean beginner pattern
+
+When solving a math problem in Python, it helps to ask:
+
+1. Can I solve this with a basic operator like `+` or `*`?
+2. Is there a built-in function like `sum()` or `max()` that makes it clearer?
+3. Do I need the `math` module for a more specific function like `sqrt()` or `ceil()`?
+
+This helps you choose the simplest and most readable solution.
+
+---
+
+## Practical examples
+
+### Example 1: Total price
+
+```python
+prices = [10.5, 20.0, 7.25]
+print(sum(prices))
+```
+
+### Example 2: Highest score
+
+```python
+scores = [18, 20, 16, 19]
+print(max(scores))
+```
+
+### Example 3: Distance from zero
+
+```python
+temperature_change = -12
+print(abs(temperature_change))
+```
+
+### Example 4: Rounded price
+
+```python
+price = 19.987
+print(round(price, 2))
+```
+
+### Example 5: Circle area
+
+```python
+import math
+
+radius = 4
+area = math.pi * radius ** 2
+print(area)
+```
+
+---
+
+## Practice questions
+
+1. What does `abs()` do?
+2. What is the difference between `round()` and `math.ceil()`?
+3. What does `sum()` expect as input?
+4. When would you use `max()`?
+5. Why do we need to write `import math` before using `math.sqrt()`?
+6. Why does `math.sqrt(25)` return `5.0` instead of `5`?
+
+---
+
+## Small practice tasks
+
+### Task 1
+
+Use `abs()` to print the absolute value of `-25`.
+
+### Task 2
+
+Use `round()` to round `8.736` to:
+
+* the nearest whole number
+* two decimal places
+
+### Task 3
+
+Use `min()` and `max()` on this list:
+
+```python
+[14, 3, 27, 9, 5]
+```
+
+### Task 4
+
+Use `sum()` to calculate the total of:
+
+```python
+[2, 4, 6, 8, 10]
+```
+
+### Task 5
+
+Import `math` and print:
+
+* the square root of `49`
+* the ceiling of `6.2`
+* the floor of `6.9`
+
+### Task 6
+
+Calculate the area of a circle with radius `5` using `math.pi`.
+
+---
+
+## Final summary
+
+Math functions make Python more powerful and more readable.
+
+In this lesson, you learned:
+
+* built-in functions like `abs()`, `round()`, `pow()`, `min()`, `max()`, and `sum()`
+* how to import and use the `math` module
+* important `math` tools like `sqrt()`, `ceil()`, `floor()`, `pi`, and `factorial()`
+* how to choose between operators, built-in functions, and `math` module functions
+
+Once these ideas feel natural, solving numeric problems in Python becomes much easier.

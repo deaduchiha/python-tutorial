@@ -1,0 +1,677 @@
+---
+title: Numbers in Python
+description: "A beginner-friendly guide to Python numbers, including int, float, print(), type(), arithmetic operators, and why floating-point results are not always exact."
+---
+
+# Numbers in Python
+
+Numbers are one of the first and most important data types you will use in Python.
+
+They appear everywhere:
+
+* counting items
+* storing age
+* measuring distance
+* calculating prices
+* working with scores
+* building logic in programs
+
+If you understand Python numbers well, many other topics become easier.
+
+This lesson focuses on the two main numeric types beginners use first:
+
+* `int`
+* `float`
+
+It also introduces a few essential tools and actions:
+
+* `print()`
+* `type()`
+* arithmetic operators like `+`, `-`, `*`, and `/`
+
+---
+
+## The two main number types
+
+In Python, the two most common numeric types for beginners are:
+
+* `int`
+* `float`
+
+These two types may look similar at first, but they are used for different kinds of values.
+
+### `int`
+
+`int` stands for **integer**.
+An integer is a whole number without a decimal point.
+
+Examples:
+
+```python
+5
+100
+-3
+0
+```
+
+You usually use `int` for values like:
+
+* age
+* number of students
+* score count
+* item quantity
+* years
+
+Example:
+
+```python
+students = 25
+year = 2026
+temperature = -4
+```
+
+All of these are integers because they do not contain decimal values.
+
+### `float`
+
+`float` means a number with a decimal point.
+
+Examples:
+
+```python
+3.14
+9.9
+0.5
+-2.75
+```
+
+You usually use `float` for values like:
+
+* height
+* weight
+* prices
+* percentages
+* measurements
+
+Example:
+
+```python
+price = 19.99
+height = 1.72
+temperature = 36.5
+```
+
+These are floats because they include decimal values.
+
+---
+
+## Seeing values with `print()`
+
+One of the first actions you will use in Python is `print()`.
+
+`print()` displays output on the screen.
+
+Example:
+
+```python
+print(5)
+print(3.14)
+print("Hello")
+```
+
+Output:
+
+```txt
+5
+3.14
+Hello
+```
+
+When you are learning, `print()` is extremely useful because it helps you:
+
+* see what your code is doing
+* check values while testing
+* understand how Python evaluates expressions
+
+Example:
+
+```python
+age = 20
+price = 9.99
+
+print(age)
+print(price)
+```
+
+This is one of the simplest and most helpful habits for beginners:
+
+> when you are unsure what a value is, print it
+
+---
+
+## Checking the type with `type()`
+
+Another very important beginner tool is `type()`.
+
+`type()` tells you the type of a value.
+
+Examples:
+
+```python
+print(type(5))
+print(type(3.14))
+print(type("Python"))
+```
+
+Output:
+
+```txt
+<class 'int'>
+<class 'float'>
+<class 'str'>
+```
+
+### Why does `type()` show the word `class`?
+
+This is a very good beginner question.
+
+When you run:
+
+```python
+print(type(5))
+```
+
+you see:
+
+```txt
+<class 'int'>
+```
+
+Python shows the word `class` because types in Python are built using the idea of **classes**.
+
+For now, you do not need to understand classes deeply.
+At this stage, the most important idea is simply:
+
+> `5` is an object whose type is `int`
+
+And Python displays that type as:
+
+```txt
+<class 'int'>
+```
+
+Later, when you learn classes properly, this will make much more sense.
+
+For now, you can safely read:
+
+* `<class 'int'>` as “this value is an integer”
+* `<class 'float'>` as “this value is a float”
+* `<class 'str'>` as “this value is a string”
+
+That is enough for now.
+
+---
+
+## Working with integers and floats
+
+Let’s look at a few examples together.
+
+```python
+print(type(10))
+print(type(10.0))
+print(type(-7))
+print(type(-7.5))
+```
+
+Output:
+
+```txt
+<class 'int'>
+<class 'float'>
+<class 'int'>
+<class 'float'>
+```
+
+Notice the pattern:
+
+* numbers without a decimal point are usually `int`
+* numbers with a decimal point are usually `float`
+
+Even `10.0` is a float, not an int, because it has a decimal point.
+
+This matters because Python keeps track of what kind of number you are using.
+
+---
+
+## Basic arithmetic operators
+
+Python supports the basic arithmetic operations you expect from math.
+
+These are some of the most important arithmetic operators:
+
+* `+` addition
+* `-` subtraction
+* `*` multiplication
+* `/` division
+* `//` floor division
+* `%` remainder
+* `**` exponent
+
+Let’s look at them one by one.
+
+### Addition with `+`
+
+```python
+print(4 + 3)
+```
+
+Output:
+
+```txt
+7
+```
+
+### Subtraction with `-`
+
+```python
+print(10 - 6)
+```
+
+Output:
+
+```txt
+4
+```
+
+### Multiplication with `*`
+
+```python
+print(5 * 2)
+```
+
+Output:
+
+```txt
+10
+```
+
+### Division with `/`
+
+```python
+print(10 / 2)
+print(7 / 2)
+```
+
+Output:
+
+```txt
+5.0
+3.5
+```
+
+A very important beginner note:
+
+> In Python, `/` produces a float result.
+
+Even when the answer looks like a whole number, the result is still a float.
+
+That is why:
+
+```python
+print(type(10 / 2))
+```
+
+gives:
+
+```txt
+<class 'float'>
+```
+
+### Floor division with `//`
+
+```python
+print(7 // 2)
+```
+
+Output:
+
+```txt
+3
+```
+
+Floor division removes the decimal part and gives the whole-number result.
+
+### Remainder with `%`
+
+```python
+print(7 % 2)
+```
+
+Output:
+
+```txt
+1
+```
+
+This is very useful when checking things like even and odd numbers.
+
+Example:
+
+```python
+print(10 % 2)
+print(9 % 2)
+```
+
+Output:
+
+```txt
+0
+1
+```
+
+### Exponent with `**`
+
+```python
+print(2 ** 3)
+```
+
+Output:
+
+```txt
+8
+```
+
+This means:
+
+```txt
+2 × 2 × 2
+```
+
+---
+
+## Mixing `int` and `float`
+
+Python can work with integers and floats together.
+
+Example:
+
+```python
+print(5 + 2.5)
+print(10 - 3.2)
+print(4 * 1.5)
+```
+
+Output:
+
+```txt
+7.5
+6.8
+6.0
+```
+
+When you mix an `int` and a `float`, the result is usually a `float`.
+
+Example:
+
+```python
+result = 5 + 2.5
+print(result)
+print(type(result))
+```
+
+Output:
+
+```txt
+7.5
+<class 'float'>
+```
+
+This happens because a decimal number is involved, so Python keeps the result in floating-point form.
+
+---
+
+## Understanding floating-point precision
+
+This is one of the most important beginner ideas when working with decimal numbers.
+
+Look at this example:
+
+```python
+print(1.1 + 9.9)
+```
+
+You might expect the result to be exactly:
+
+```txt
+11.0
+```
+
+But on many systems, Python may display something like:
+
+```txt
+10.999999999999998
+```
+
+or a very close variation.
+
+This surprises many beginners.
+It looks wrong at first, but the deeper reason is very important.
+
+### Why does this happen?
+
+Computers store floating-point numbers in binary form.
+
+Some decimal values, such as `1.1` and `9.9`, cannot be represented perfectly in binary.
+
+That means Python stores very close approximations of those numbers, not exact perfect decimal versions.
+
+When those approximations are added together, the final displayed result may look slightly off.
+
+This is called **floating-point precision**.
+
+### Is Python broken?
+
+No.
+
+This behavior is normal in many programming languages, not just Python.
+It comes from how floating-point numbers are represented internally by computers.
+
+So the key idea is:
+
+> the value is very close to 11.0, but floating-point storage is not always exact for decimal fractions
+
+### Is the result still a float?
+
+Yes.
+
+Even if the displayed result is:
+
+```txt
+10.999999999999998
+```
+
+it is still a `float`.
+
+Example:
+
+```python
+result = 1.1 + 9.9
+print(result)
+print(type(result))
+```
+
+Output:
+
+```txt
+10.999999999999998
+<class 'float'>
+```
+
+The result is still a float because:
+
+* `1.1` is a float
+* `9.9` is a float
+* adding floats produces a float
+
+### Why this matters for beginners
+
+Most of the time, this is not a problem for simple learning exercises.
+But it matters when:
+
+* comparing decimal values exactly
+* working with money
+* building systems where precision is very important
+
+For beginner learning, the most important thing is simply to understand:
+
+* floats represent decimal numbers
+* some decimal values are stored approximately
+* tiny precision differences are normal
+
+---
+
+## A clean mental model for `int` and `float`
+
+Here is a simple way to remember the difference:
+
+### `int`
+
+Use `int` for whole numbers.
+
+Examples:
+
+* `3`
+* `0`
+* `-20`
+
+### `float`
+
+Use `float` for decimal numbers.
+
+Examples:
+
+* `3.5`
+* `0.0`
+* `-20.75`
+
+### Important note
+
+A float does not become an int just because its value looks whole.
+
+For example:
+
+```python
+print(type(11.0))
+```
+
+Output:
+
+```txt
+<class 'float'>
+```
+
+It is still a float because it is written as a decimal number.
+
+---
+
+## Good beginner examples
+
+These are strong examples to practice with:
+
+```python
+print(8)
+print(8.0)
+print(type(8))
+print(type(8.0))
+print(6 + 2)
+print(6 / 2)
+print(7 // 2)
+print(7 % 2)
+print(2 ** 4)
+print(1.1 + 9.9)
+```
+
+As you run these, ask:
+
+* what is the value?
+* what is the type?
+* why did Python choose that result?
+
+That habit will make your understanding much stronger.
+
+---
+
+## Practice questions
+
+1. What is the difference between `int` and `float`?
+2. Why does `type(5)` show `<class 'int'>`?
+3. Why does `10 / 2` return a float?
+4. What is the difference between `/` and `//`?
+5. What does `%` return?
+6. Why might `1.1 + 9.9` not display exactly as `11.0`?
+7. If Python prints `10.999999999999998`, why is that still a float?
+
+---
+
+## Small practice tasks
+
+### Task 1
+
+Print one integer and one float.
+
+### Task 2
+
+Use `type()` to check the type of:
+
+* `10`
+* `10.5`
+* `0`
+* `0.0`
+
+### Task 3
+
+Write code to:
+
+* add two numbers
+* subtract two numbers
+* multiply two numbers
+* divide two numbers
+
+### Task 4
+
+Print the result of:
+
+```python
+1.1 + 9.9
+```
+
+Then print its type.
+
+### Task 5
+
+Try these and explain the result:
+
+```python
+print(5 + 2.0)
+print(8 / 4)
+print(8 // 4)
+```
+
+---
+
+## Final summary
+
+Numbers are a core part of Python, and the two most important number types for beginners are `int` and `float`.
+
+In this lesson, you learned that:
+
+* `int` is used for whole numbers
+* `float` is used for decimal numbers
+* `print()` shows output
+* `type()` shows the type of a value
+* Python displays types using the word `class`, which connects to a later topic
+* arithmetic operators let you perform mathematical actions
+* division with `/` returns a float
+* floating-point numbers are not always stored exactly, which is why expressions like `1.1 + 9.9` may not display exactly as `11.0`
+
+If you understand these ideas well, you already have a strong foundation for learning the rest of Python.
